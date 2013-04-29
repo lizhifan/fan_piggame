@@ -1,12 +1,12 @@
 # Game - Programming Assignments Private Repository
 ### Student Information
-  + Name: Lizhi Fan
-  + USC Email: lizhifan@usc.edu
-  + USC ID: 6388580021
+  + Name: Tommy Trojan
+  + USC Email: ttrojan@usc.edu
+  + USC ID: 0123456789
 
 ### Game Information
-  + Game Name: Pigs Can Fly
-  + Game Description: A pig who has grown wings has to avoid obstacles in the sky. 
+  + Game Name: myAwsomeGame
+  + Game Description: One sentence game description
   + [Game Design Doc](GameDesignDoc.md)
 
 
@@ -24,4 +24,5 @@ echo "doxygen config.txt"
 echo "./game_lizhifan"
 ```
 
-
+### Screenshots -- [Optional]
+You can either remove this section or add screenshots if you wish.
