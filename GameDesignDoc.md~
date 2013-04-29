@@ -9,15 +9,15 @@ Rather, the way to play the game is by clicking on the Pig. The first click will
 Your pig is not alone in the sky though. There are obstacles, which are the '5 things' which he is supposed to avoid or go towards. 
 
 Here is an image of the pig 
-![Flying Pig](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRU9uFYapMPoVQXx-D-PerRq4gjoOBAUxjndcJQ3qI4dp0mgslU "Flying Pig")
+![Flying Pig](piggy.png "Flying Pig")
 
 ## 5 things
 ----
-`1.` **Apple** This will give the Player 100 extra points. 
-`2.` **Airplane** The Airplane moves very quickly but only in the x direction. Avoid the Airplane or else lose a life. 
-`3.` **Balloon** The Balloon's movement is slowly floating upwards and to the left. A collision withe Balloon will also lose a life. 
+`1.` **Apple** This will give the Player 100 extra points. ![Apple](apple.png "Apple")
+`2.` **Airplane** The Airplane moves very quickly but only in the x direction. Avoid the Airplane or else lose a life. ![Airplane](airplane.png "Airplane")
+`3.` **Balloon** The Balloon's movement is slowly floating upwards and to the left. A collision withe Balloon will also lose a life. ![Balloon](balloon.png "Balloon")
 `4.` **Hot Air Balloon** Similar to the Balloon but opposite, the Hot Air Balloon's movement is from the top to downwards and right. Avoid the Hot Air Balloon. 
-`5.` **Buildings** These are on the Bottom of the screen. Do not crash into the Buildings. 
+`5.` **Buildings** These are on the Bottom of the screen. Do not crash into the Buildings. ![Building 1](building1.png "Building 1")![Building 2](building2.png "Building 2")
 
 ## Score Changes 
 ----

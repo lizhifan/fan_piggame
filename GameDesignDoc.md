@@ -13,11 +13,11 @@ Here is an image of the pig
 
 ## 5 things
 ----
-`1.` **Apple** This will give the Player 100 extra points. 
-`2.` **Airplane** The Airplane moves very quickly but only in the x direction. Avoid the Airplane or else lose a life. 
-`3.` **Balloon** The Balloon's movement is slowly floating upwards and to the left. A collision withe Balloon will also lose a life. 
-`4.` **Hot Air Balloon** Similar to the Balloon but opposite, the Hot Air Balloon's movement is from the top to downwards and right. Avoid the Hot Air Balloon. 
-`5.` **Buildings** These are on the Bottom of the screen. Do not crash into the Buildings. 
+`1.` **Apple** This will give the Player 100 extra points. ![Apple](apple.png "Apple")
+`2.` **Airplane** The Airplane moves very quickly but only in the x direction. Avoid the Airplane or else lose a life. ![Airplane](airplane.png "Airplane")
+`3.` **Balloon** The Balloon's movement is slowly floating upwards and to the left. A collision withe Balloon will also lose a life. ![Balloon](balloon.png "Balloon")
+`4.` **Hot Air Balloon** Similar to the Balloon but opposite, the Hot Air Balloon's movement is from the top to downwards and right. Avoid the Hot Air Balloon. ![Hot Air](hotair.png "Hot Air")
+`5.` **Buildings** These are on the Bottom of the screen. Do not crash into the Buildings. ![Building 1](building1.png "Building 1")![Building 2](building2.png "Building 2")
 
 ## Score Changes 
 ----
