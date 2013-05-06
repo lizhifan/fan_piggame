@@ -16,7 +16,6 @@ HotAir::HotAir(QPixmap * pm, int x, int y, GraphicWindow* h) : Thing(pm, x, y) {
 
 void HotAir::move() {
 
-
 	 	x_ = x_ - 2;
 	 	y_ = y_+ 1;
     QGraphicsPixmapItem::setPos(x_, y_); 

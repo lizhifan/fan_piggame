@@ -18,7 +18,8 @@ Here is an image of the pig
 `3.` **Balloon** The Balloon's movement is slowly floating upwards and to the left. A collision withe Balloon will also lose a life. ![Balloon](balloon.png "Balloon")
 `4.` **Hot Air Balloon** Similar to the Balloon but opposite, the Hot Air Balloon's movement is from the top to downwards and left. Avoid the Hot Air Balloon. ![Hot Air](hotair.png "Hot Air")
 `5.` **Buildings** These are on the Bottom of the screen. They move only to the left but because they move at the same speed as the background, they do not seem exactly to be moving but rather to be scrolling with the background. Do not crash into the Buildings. ![Building 1](building1.png "Building 1")![Building 2](building2.png "Building 2")
-
+`6.` **Bird** These are one of the tracking objects. It starts moving towards the Pig when it approaches a certain distance from the pig. ![Bird](bird.png "bird") 
+`7.` **Jet** These move quickly in the x direction only. It tracks the Pig's original y direction and then charges towards it. ![Jet](jet.png "jet")
 ## Score Changes 
 ----
 

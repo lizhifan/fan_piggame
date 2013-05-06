@@ -25,7 +25,7 @@ using namespace std;
 
 Pig::Pig(QPixmap* pm, int x, int y, GraphicWindow* h) : Thing(pm, x, y) {
  	x_ = x;
- 	interval = 30; 
+ 	interval = 50; 
  	gr = h;
  	y_=y; 
  	pixMap = pm; 
@@ -50,7 +50,6 @@ Pig::~Pig() {
 } 
 
 void Pig::move() {
- 
 
  	if (!up) {
  		up = true;
@@ -75,7 +74,7 @@ void Pig::mousePressEvent(QGraphicsSceneMouseEvent* event) {
 void Pig::moveup() {
 
  	if (y_ > 20) {
-	 	y_ = y_ -1 ;  
+	 	y_ = y_ -2 ;  
  	 	QGraphicsPixmapItem::setPos(x_, y_); 
  		} 
 } 
@@ -92,7 +91,7 @@ int Pig::gety() {
 void Pig::movedown() {
 
  	if (y_ < 450) {
- 		y_ = y_ +1 ;  
+ 		y_ = y_ +2 ;  
  	 	QGraphicsPixmapItem::setPos(x_, y_); 
  		 } 
 } 

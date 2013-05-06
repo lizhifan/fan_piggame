@@ -11,8 +11,10 @@
 #include <QMouseEvent> 
 #include <vector> 
 #include <QTimer> 
+#include "bird.h" 
 #include <QString> 
 #include "building.h" 
+#include "jet.h" 
 #include <iostream> 
 #include <QGraphicsSimpleTextItem> 
 #include <QLineEdit> 
@@ -27,11 +29,14 @@
 #include <cstdlib> 
 using namespace std;  
 
-GraphicWindow::GraphicWindow(QLineEdit* score, QLineEdit* lives) {
+GraphicWindow::GraphicWindow(QLineEdit* score, QLineEdit* lives, QLineEdit* level) {
     WINDOW_MAX_X = 705; 
     WINDOW_MAX_Y = 505; 
     score_ = score; 
     lives_ = lives; 
+    level_ = level; 
+    level_->clear(); 
+    level_->insert("1"); 
 
     numero = 0; 
 
@@ -43,7 +48,7 @@ GraphicWindow::GraphicWindow(QLineEdit* score, QLineEdit* lives) {
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,700,500);
 
-    speedtimer = new QTimer(this);
+   speedtimer = new QTimer(this);
     speedtimer->setInterval(50000);
     speedtimer->start(); 
     connect(speedtimer, SIGNAL(timeout()), this, SLOT(speedup()));
@@ -80,6 +85,11 @@ GraphicWindow::GraphicWindow(QLineEdit* score, QLineEdit* lives) {
 
  	    connect(backtimer, SIGNAL(timeout()), this, SLOT(scorekeep()));
 
+	 
+	
+
+
+
 	    setFixedSize( WINDOW_MAX_X, WINDOW_MAX_Y );
  	    connect(backtimer, SIGNAL(timeout()), this, SLOT(handlecollide()));
             setScene(scene); 
@@ -99,7 +109,7 @@ GraphicWindow::~GraphicWindow() {
       delete newback;
       delete backtimer; 
       delete gentimer; 
-      delete speedtimer;
+    //  delete speedtimer;
  	for (unsigned int i=1; i<myThings.size();i++) {
  		delete myThings[i]; 
  	}  
@@ -111,7 +121,7 @@ GraphicWindow::~GraphicWindow() {
 
 void GraphicWindow::randomgenerate() {
      		QPixmap* pm2;
- 	int rando = rand() % 6; 
+ 	int rando = rand() % 10; 
  	switch (rando) 
  	{
  	    case 0: 
@@ -143,7 +153,12 @@ void GraphicWindow::randomgenerate() {
  		break; 
  		} 
  	     case 4: {
- 			break; 
+ 			pm2 = new QPixmap("bird.png");
+    		 	Bird* bir = new Bird(pm2,700, rand()%300+20, this,piggy); 
+    			scene->addItem(bir); 
+    			connect(backtimer, SIGNAL(timeout()), bir, SLOT(move()));
+    			myThings.push_back(bir); 
+ 			break;  
  		} 
  	     case 5: {
  		pm2 = new QPixmap("hotair.png"); 
@@ -153,6 +168,29 @@ void GraphicWindow::randomgenerate() {
 	 	myThings.push_back(h);
  		break; 
  	        } 
+ 	  case 6: 
+ 		{
+ 		pm2 = new QPixmap("jet.png");
+    		Jet* je = new Jet(pm2,700, piggy->gety(), this); 
+    		scene->addItem(je); 
+    		connect(backtimer, SIGNAL(timeout()), je, SLOT(move()));
+    		myThings.push_back(je);  
+ 		break; } 
+     	case 7: 
+ 		{
+     		pm2 = new QPixmap("apple.png");
+    		Apple* app = new Apple(pm2,700, rand()%300+20, this); 
+    		scene->addItem(app); 
+    		connect(backtimer, SIGNAL(timeout()), app, SLOT(move()));
+    		myThings.push_back(app);  
+ 		break;    
+ 		} 
+ 	case 8: 
+ 		{
+ 		break; 
+ 		} 
+ 	case 9: {break; 
+ 		} 
  	
  	} 
 
@@ -182,7 +220,7 @@ void GraphicWindow::handlecollide() {
 } 
 
 void GraphicWindow::delthing(Thing* t) {
- 	Thing* a =NULL; 
+ 	Thing* a = NULL; 
  	vector<Thing*>::iterator it = myThings.begin(); 
  	for (unsigned int i=0; i< myThings.size(); i++) {
  		if (i!=0)  

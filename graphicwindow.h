@@ -30,7 +30,7 @@ class GraphicWindow : public QGraphicsView {
  	 	/**constructor that creates the game with all its elements 
  		@param QLineEdit* score that is passed from MainWindow so that the score can be updated 
  		@param QLineEdit* lives that is passed from MainWindow so that the number of lives can be updated*/ 
- 	      GraphicWindow(QLineEdit*, QLineEdit*); 
+ 	      GraphicWindow(QLineEdit*, QLineEdit*, QLineEdit*); 
  		/**basic destructor*/ 
  	      ~GraphicWindow(); 
  		MainWindow* w;  
@@ -49,12 +49,14 @@ class GraphicWindow : public QGraphicsView {
 		    void addScore(); 
  		/** this is called after a collision and causes the number of lives to decrement by 1*/ 
  		    void loselife();  
+ 		
 
  	private: 
        	      int WINDOW_MAX_X; 
    	       int WINDOW_MAX_Y;
                QGraphicsScene *scene;
  	       QLineEdit* score_; 
+ 	       QLineEdit* level_; 
    	       QLineEdit* lives_;
  		int numscore; 
  		int numlives; 

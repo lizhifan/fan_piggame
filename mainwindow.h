@@ -37,6 +37,7 @@ private:
     int WINDOW_MAX_X; 
     int WINDOW_MAX_Y;
     QLineEdit *score; 
+    QLineEdit *level; 
     QPushButton* start; 
     QPushButton* stop; 
     QPushButton* pause; 
