@@ -31,6 +31,16 @@ The score never goes down, only increases.
 
 The pig starts off with 3 lives. Every time he crashes into an obstacle, he loses a life. The game immediately ends when all his lives are gone. 
 
+## Levels 
+----
+
+There are 3 levels in the game 
+The first level generates only Apples, Airplanes, Balloons, Hot Air Balloons, and Buildings. 
+The second level generates Apples, Airplanes, Balloons, Hot Air Balloons, Buildings, and Birds. 
+The third level generates Apples, Airplanes, Balloons, Hot Air Balloons, Buildings, Birds, and Jets. 
+
+With each progressive level, items move faster and are generated quicker. Also, there is more of a chance of an item being randomly generated. 
+
 ## Layout 
 ----
 [Link to basic sketch](http://i.imgur.com/Y0la1TY.jpg?1?2180) 

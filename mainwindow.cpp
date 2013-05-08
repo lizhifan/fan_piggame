@@ -66,8 +66,8 @@ MainWindow::MainWindow(QApplication* a) {
     row3->addWidget(score); 
     row3->addWidget(seedLabel); 
     row3->addWidget(lives); 
-    //row3->addWidget(levelLabel); 
-    //row3->addWidget(level); 
+    row3->addWidget(levelLabel); 
+    row3->addWidget(level); 
     vertical->addLayout(row3); 
 
     gamerow = new QHBoxLayout; 

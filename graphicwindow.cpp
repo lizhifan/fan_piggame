@@ -31,6 +31,7 @@ using namespace std;
 
 GraphicWindow::GraphicWindow(QLineEdit* score, QLineEdit* lives, QLineEdit* level) {
     WINDOW_MAX_X = 705; 
+    numlevel = 1; 
     WINDOW_MAX_Y = 505; 
     score_ = score; 
     lives_ = lives; 
@@ -109,13 +110,15 @@ GraphicWindow::~GraphicWindow() {
       delete newback;
       delete backtimer; 
       delete gentimer; 
-    //  delete speedtimer;
+      delete speedtimer;
  	for (unsigned int i=1; i<myThings.size();i++) {
  		delete myThings[i]; 
  	}  
  	delete scene; 
 
 } 
+
+
 
 
 
@@ -153,11 +156,13 @@ void GraphicWindow::randomgenerate() {
  		break; 
  		} 
  	     case 4: {
+
+ 		       if (numlevel > 1) {
  			pm2 = new QPixmap("bird.png");
     		 	Bird* bir = new Bird(pm2,700, rand()%300+20, this,piggy); 
     			scene->addItem(bir); 
     			connect(backtimer, SIGNAL(timeout()), bir, SLOT(move()));
-    			myThings.push_back(bir); 
+    			myThings.push_back(bir); } 
  			break;  
  		} 
  	     case 5: {
@@ -169,12 +174,12 @@ void GraphicWindow::randomgenerate() {
  		break; 
  	        } 
  	  case 6: 
- 		{
+ 		{   if (numlevel >2) {
  		pm2 = new QPixmap("jet.png");
     		Jet* je = new Jet(pm2,700, piggy->gety(), this); 
     		scene->addItem(je); 
     		connect(backtimer, SIGNAL(timeout()), je, SLOT(move()));
-    		myThings.push_back(je);  
+    		myThings.push_back(je);  } 
  		break; } 
      	case 7: 
  		{
@@ -195,6 +200,8 @@ void GraphicWindow::randomgenerate() {
  	} 
 
 }  
+
+
 
 void GraphicWindow::handlecollide() {
  	
@@ -281,6 +288,19 @@ void GraphicWindow::scorekeep() {
 } 
 
 void GraphicWindow::speedup() {
+
+      numlevel++; 
+
+      if (numlevel == 2) {
+ 	level_->clear(); 
+ 	level_->insert("2"); 
+      } 
+      else if (numlevel == 3) {
+ 	level_->clear(); 
+ 	level_->insert("3"); 
+      } 
+
+    if (numlevel < 4) {
  	timerinterval = timerinterval - 10; 
  	if (timerinterval > 10) {
   	backtimer->setInterval(timerinterval); 
@@ -291,7 +311,7 @@ void GraphicWindow::speedup() {
 	geninterval = geninterval - 500; 
  	if (geninterval > 500) {
 	gentimer->setInterval(geninterval); }
- 	
+ 	} 
 } 
 
 void GraphicWindow::loselife() {

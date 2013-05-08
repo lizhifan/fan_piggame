@@ -63,10 +63,11 @@ class GraphicWindow : public QGraphicsView {
  		int timerinterval; 
  		int geninterval; 
  		int numero; 
+ 		int numlevel; 
 
      	  public slots: 
  		/**function called by a timer that randomly generates different Things*/ 
-	 	void randomgenerate(); 
+	 	void randomgenerate();
  		/**function that checks and handles collisions*/ 
  		void handlecollide(); 
  		/**function that creates the buildings, created separately from the rest of the things*/ 
