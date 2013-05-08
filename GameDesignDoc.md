@@ -2,7 +2,7 @@
 ----
 
 My game follows the adventure of a little pig who has learned how to fly. 
-You control his flight with mouse clicks.
+You control his flight with mouse clicks. YOU MUST CLICK ON THE PIG. 
 If you do not click on the Pig initially, the game will start but the pig will not move. This will be a very boring and very quick game. 
 Rather, the way to play the game is by clicking on the Pig. The first click will start the pig moving upwards. To get the pig to move back downwards, click again. Etc. 
 
