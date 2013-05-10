@@ -45,3 +45,8 @@ With each progressive level, items move faster and are generated quicker. Also, 
 ----
 [Link to basic sketch](http://i.imgur.com/Y0la1TY.jpg?1?2180) 
 
+## License 
+----
+GNU General Public License
+[License](/LICENSE.txt) 
+
