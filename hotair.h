@@ -9,10 +9,10 @@ class HotAir : public QObject, public Thing {
  	Q_OBJECT
     public:  
  	/**basic constructor 
-@param pm is the the QPixmap or image that is associated with the HotAir 
-@param x is the x location of where the HotAir Balloon is to be created 
-@param y is the y location of where the HotAir Balloon is to be created 
-@param h is the graphicwindow that created the specific HotAir*/ 
+ 	@param pm is the the QPixmap or image that is associated with the HotAir 
+	@param x is the x location of where the HotAir Balloon is to be created 
+	@param y is the y location of where the HotAir Balloon is to be created 
+	@param h is the graphicwindow that created the specific HotAir*/ 
  	HotAir(QPixmap*, int, int, GraphicWindow*); 
  	/**basic destructor*/ 
  	~HotAir(); 

@@ -24,13 +24,13 @@ void Jet::move() {
  	QGraphicsPixmapItem::setPos(x_, y_); 
 
  	if (x_ < -50) {
- 		gr->delthing(this); 
+ 	     gr->delthing(this); 
  	} 
 } 
 void Jet::collide() {
 
 	gr->loselife(); 
- 		gr->delthing(this); 
+ 	gr->delthing(this); 
  	 
 }
 /**@return x location of where the Balloon is at */ 

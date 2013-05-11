@@ -24,15 +24,15 @@
 using namespace std; 
 
 Pig::Pig(QPixmap* pm, int x, int y, GraphicWindow* h) : Thing(pm, x, y) {
- 	x_ = x;
- 	interval = 50; 
- 	gr = h;
- 	y_=y; 
- 	pixMap = pm; 
-	up = false; 
- 	timer = new QTimer(this);
-    timer->setInterval(interval);
-    timer->start();  
+   x_ = x;
+   interval = 50; 
+   gr = h;
+   y_=y; 
+   pixMap = pm; 
+   up = false; 
+   timer = new QTimer(this);
+   timer->setInterval(interval);
+   timer->start();  
  	//if up is false, need to move up, if up is true, already moving up need to move down
 } 
 
@@ -40,30 +40,25 @@ void Pig::speedpig() {
     if (interval > 20) {
  	interval = interval - 7; 
  	timer->setInterval(interval); } 
-  	
 } 
 
 Pig::~Pig() {
  	delete timer; 
  	delete pixMap; 
- 
 } 
 
 void Pig::move() {
 
  	if (!up) {
- 		up = true;
+ 	    up = true;
  	    disconnect(timer, 0, 0, 0); 
 	    connect(timer, SIGNAL(timeout()), this, SLOT(moveup()));
-
- 
- 	} 
+ 	    } 
  	else if (up) { 
- 		up = false; 
+ 	    up = false; 
  	    disconnect(timer, 0, 0, 0); 
 	    connect(timer, SIGNAL(timeout()), this, SLOT(movedown()));
- 	} 
-
+ 	    } 
 }
 
 void Pig::mousePressEvent(QGraphicsSceneMouseEvent* event) {
@@ -89,7 +84,6 @@ int Pig::gety() {
 
 
 void Pig::movedown() {
-
  	if (y_ < 450) {
  		y_ = y_ +2 ;  
  	 	QGraphicsPixmapItem::setPos(x_, y_); 

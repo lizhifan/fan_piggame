@@ -33,37 +33,36 @@ class GraphicWindow : public QGraphicsView {
  	      GraphicWindow(QLineEdit*, QLineEdit*, QLineEdit*); 
  		/**basic destructor*/ 
  	      ~GraphicWindow(); 
- 		MainWindow* w;  
-    	 	 Background* back; 
-  		  Background* newback; 
- 		   QTimer* backtimer; 
-  		  QTimer* gentimer; 
-  		  QTimer* speedtimer; 
- 		   /**this is the function that handles the creating of the background so that it is continuously sidescrolling*/ 
-		    void createnew(Background *); 
-		    vector<Thing*> myThings; 
-		    Pig* piggy; 
- 			/**this function is called by each individual Thing when it is out of the range of the window so that it can be deleted*/ 
-		    void delthing(Thing*);
- 		/**this is for the Apple's collision so that the score can be incremented by 100*/ 
-		    void addScore(); 
- 		/** this is called after a collision and causes the number of lives to decrement by 1*/ 
- 		    void loselife();  
+ 	      MainWindow* w;  
+    	      Background* back; 
+  	      Background* newback; 
+ 	      QTimer* backtimer; 
+  	      QTimer* gentimer; 
+  	      QTimer* speedtimer; 
+ 	      /**this is the function that handles the creating of the background so that it is continuously sidescrolling*/ 
+	      void createnew(Background *); 
+	      vector<Thing*> myThings; 
+	      Pig* piggy; 
+ 	      /**this function is called by each individual Thing when it is out of the range of the window so that it can be deleted*/ 
+	      void delthing(Thing*);
+ 	      /**this is for the Apple's collision so that the score can be incremented by 100*/ 
+	      void addScore(); 
+ 	      /** this is called after a collision and causes the number of lives to decrement by 1*/ 
+ 	      void loselife();  
  		
-
  	private: 
-       	      int WINDOW_MAX_X; 
+       	       int WINDOW_MAX_X; 
    	       int WINDOW_MAX_Y;
                QGraphicsScene *scene;
  	       QLineEdit* score_; 
  	       QLineEdit* level_; 
    	       QLineEdit* lives_;
- 		int numscore; 
- 		int numlives; 
- 		int timerinterval; 
- 		int geninterval; 
- 		int numero; 
- 		int numlevel; 
+ 	       int numscore; 
+ 	       int numlives; 
+ 	       int timerinterval; 
+ 	       int geninterval; 
+ 	       int numero; 
+ 	       int numlevel; 
 
      	  public slots: 
  		/**function called by a timer that randomly generates different Things*/ 

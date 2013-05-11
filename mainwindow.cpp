@@ -53,7 +53,7 @@ MainWindow::MainWindow(QApplication* a) {
     moveLabel->setBuddy(score);  
     QLabel *seedLabel = new QLabel(tr("Lives:"));  	
     seedLabel->setBuddy(lives); 
-   QLabel *levelLabel = new QLabel(tr("Level:"));  	
+    QLabel *levelLabel = new QLabel(tr("Level:"));  	
     seedLabel->setBuddy(level);
 
     QHBoxLayout* row2 = new QHBoxLayout; 

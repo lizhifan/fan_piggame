@@ -10,10 +10,10 @@ class Pig : public QObject, public Thing {
     Q_OBJECT
     public:  
  	/**constructor that creates the Pig with the QPixmap at given location 
-@param pm is the the QPixmap or image that is associated with the Pig 
-@param x is the x location of where the Pig is to be created 
-@param y is the y location of where the Pig is to be created 
-@param h is the graphicwindow that created the specific Pig*/
+ 	@param pm is the the QPixmap or image that is associated with the Pig 
+	@param x is the x location of where the Pig is to be created 
+ 	@param y is the y location of where the Pig is to be created 
+	@param h is the graphicwindow that created the specific Pig*/
  	Pig(QPixmap*, int, int, GraphicWindow *); 
  	/**destructor*/ 
  	~Pig(); 
@@ -48,10 +48,6 @@ class Pig : public QObject, public Thing {
      	void moveup(); 
  	/**function that makes the pig move down*/ 
 	void movedown(); 
-
-
-
-
 };  
 #endif 
 
