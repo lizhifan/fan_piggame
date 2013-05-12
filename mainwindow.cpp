@@ -27,10 +27,9 @@ MainWindow::MainWindow(QApplication* a) {
     game = NULL; 
     scene = new QGraphicsScene();
 
-
     vertical = new QVBoxLayout;
 
-
+//creates first row with the start, stop, pause buttons and connects each to their respective slots
     QHBoxLayout *row1 = new QHBoxLayout; 
     start = new QPushButton("start"); 
     connect(start, SIGNAL(clicked()), this, SLOT(startgame()));  
@@ -42,7 +41,7 @@ MainWindow::MainWindow(QApplication* a) {
     row1->addWidget(stop); 
     vertical->addLayout(row1); 
 
-    
+//creates second and third rows with the boxes for score, usernames, and lives      
     score = new QLineEdit; 
     username = new QLineEdit; 
     lives = new QLineEdit; 
@@ -55,12 +54,10 @@ MainWindow::MainWindow(QApplication* a) {
     seedLabel->setBuddy(lives); 
     QLabel *levelLabel = new QLabel(tr("Level:"));  	
     seedLabel->setBuddy(level);
-
     QHBoxLayout* row2 = new QHBoxLayout; 
     row2->addWidget(sizeLabel); 
     row2->addWidget(username);  
     vertical->addLayout(row2); 
-
     QHBoxLayout* row3 = new QHBoxLayout; 
     row3->addWidget(moveLabel); 
     row3->addWidget(score); 
@@ -70,6 +67,7 @@ MainWindow::MainWindow(QApplication* a) {
     row3->addWidget(level); 
     vertical->addLayout(row3); 
 
+//creates a row that is empty until start game is pressed at which point it creates the game in that area
     gamerow = new QHBoxLayout; 
     vertical->addLayout(gamerow);
  
@@ -88,17 +86,19 @@ void MainWindow::startgame() {
     multitext = username->displayText();
     string user_;  
     user_ = multitext.toStdString();  
-
+//checks to make sure there is a username before starting the game
     if (user_.empty()) {
  	 cout << "please write a user" << endl; 
     } 
     else {
-
+//the game!=NULL checks to make sure that there is not currently a game
+//if there is a game, then the program deletes the previous game and disconnects the pause button
     if (game != NULL) {
  	disconnect(pause, 0,0,0); 
  	gamerow->removeWidget(game);
  	delete game; 
  	}  
+
     game = new GraphicWindow(score, lives, level); 
     gamerow->addWidget(game); 
     connect(pause, SIGNAL(clicked()), game, SLOT(pausegame()));  
