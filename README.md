@@ -14,14 +14,14 @@
 The grader should use the following procedure to compile and run the code:
 ```shell
 #Compile Instructions
-echo "qmake -project"
-echo "qmake" 
-echo "make" 
+ "qmake -project"
+ "qmake" 
+ "make" 
 #Doxygen Instructions
-echo "doxygen -g config.txt"
-echo "doxygen config.txt" 
+ "doxygen -g config.txt"
+ "doxygen config.txt" 
 #Command to run
-echo "./game_lizhifan"
+ "./game_lizhifan"
 ```
 
 
